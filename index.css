@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: rgb(231, 209, 112);
+}
+h1{
+    text-align: center;
+    font-size: 72px;
+    line-height: 180px;
+}
+
+/* 棋盘 */
+#box{
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+#box.x .rb:not(.o):not(.x):hover::before{
+    content: 'X';
+    color: lightgray;
+}
+#box.o .rb:not(.o):not(.x):hover::before{
+    content: 'O';
+    color: lightgray;
+}
+
+#box .row{
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+
+.rb{
+    box-sizing: border-box;
+    flex: 1;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-right: 4px solid rgb(100, 99, 98);
+    border-bottom: 4px solid rgb(100, 99, 98);
+    text-align: center;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+.row:nth-child(3) > .rb{
+    border-bottom: none;
+}
+.rb:last-child{
+    border-right: none;
+}
+/* 玩家X */
+.rb.x::before{
+    content: 'X';
+    color: blue;
+}
+/* 玩家O */
+.rb.o::before{
+    content: 'O';
+    color: red;
+}
+
+
+
+
+/* 提示信息 */
+
+.message{
+    display: none;
+    position: absolute;
+    top: 0px;
+    width: 450px;
+    height: 450px;
+    background-color: rgba(220, 150, 100, 0.5);
+    color: #333333;
+}
+.message p{
+    text-align: center;
+    font-size: 48px;
+    line-height: 100px;
+    margin-top: 125px;
+}
+.message button{
+    display: block;
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    color: #333333;
+    font-size: 20px;
+}
